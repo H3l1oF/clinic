@@ -2,24 +2,24 @@ Projecto em PHP da "gestão" de consultas numa clinica.
 
 Estrutura base de dados 
 ##
-Tabelas <br/>
+Tabelas <br/><br/>
 consulta - <br/>
-    			idConsulta (int) <br/>
-          data (datetime) <br/>
-          idMedico (int) <br/>
-          idPaciente (int) <br/>
-          idEspecialidade (int) <br/>
+&nbsp; &nbsp; * idConsulta (int) <br/>
+&nbsp; &nbsp; data (datetime) <br/>
+&nbsp; &nbsp; idMedico (int) <br/>
+&nbsp; &nbsp; idPaciente (int) <br/>
+&nbsp; &nbsp; idEspecialidade (int) <br/>
 especialidade - <br/>
-          * idEspecialidade (int) <br/>
-          descricao (varchar) <br/>
-          preco (double) <br/>
+&nbsp; &nbsp; * idEspecialidade (int) <br/>
+&nbsp; &nbsp; descricao (varchar) <br/>
+&nbsp; &nbsp; preco (double) <br/>
 medico - <br/>
-          * idMedico (int) <br/>
-          nome (varchar) <br/>
-          idEspecialidade (int) <br/>
+&nbsp; &nbsp; * idMedico (int) <br/>
+&nbsp; &nbsp; nome (varchar) <br/>
+&nbsp; &nbsp; idEspecialidade (int) <br/>
 paciente - <br/>
-          * idPaciente (int) <br/>
-          nome (varchar) <br/>
-          localidade (varchar) <br/>
-          contacto (int) <br/>
-          dataNasc (date) <br/>
+&nbsp; &nbsp; * idPaciente (int) <br/>
+&nbsp; &nbsp; nome (varchar) <br/>
+&nbsp; &nbsp; localidade (varchar) <br/>
+&nbsp; &nbsp; contacto (int) <br/>
+&nbsp; &nbsp; dataNasc (date) <br/>
