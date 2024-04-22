@@ -64,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_btn'])) {
                         </td>
                       </tr>";
                 }
+                $db = null;
+                $stmt = null;
             } catch (PDOException $e) {
                 echo "Erro: " . $e->getMessage();
             }
@@ -108,6 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_btn'])) {
                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<option value='{$row['idEspecialidade']}'>{$row['descricao']}</option>";
                                 }
+                                $db = null;
+                                $stmt = null;
                             } catch (PDOException $e) {
                                 echo "Erro: " . $e->getMessage();
                             }

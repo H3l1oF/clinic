@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_btn'])) {
                         </td>
                       </tr>";
                 }
+                $db = null;
+                $stmt = null;
             } catch (PDOException $e) {
                 echo "Erro: " . $e->getMessage();
             }

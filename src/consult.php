@@ -150,6 +150,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_btn'])) {
                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<option value='{$row['idMedico']}'>{$row['nome']} - {$row['descricao']}</option>";
                                 }
+                                $db = null;
+                                $stmt = null;
                             } catch (PDOException $e) {
                                 echo "Erro: " . $e->getMessage();
                             }
@@ -166,6 +168,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_btn'])) {
                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     echo "<option value=\"{$row['idPaciente']}\">{$row['nome']}</option>" . PHP_EOL;
                                 }
+                                $db = null;
+                                $stmt = null;
                             } catch (PDOException $e) {
                                 echo "Erro: " . $e->getMessage();
                             }
