@@ -27,9 +27,13 @@ try {
 		</div>
 	</div>
             ';
-
+        $db = null;
+        $gg = null;
     } else {
+        $db = new database();
         $stmt = $db->query("DELETE FROM especialidade WHERE idEspecialidade =" . $_GET["idEspecialidade"]);
+        $db = null;
+        $stmt = null;
         header("Location: /../clinic/public/?rota=spec");
         exit;
     }
@@ -40,7 +44,7 @@ try {
 ?>
 
 <script>
-document.getElementById("btnBack").addEventListener("click", function() {
-    window.location.href = "/../clinic/public/?rota=spec";
-});
+    document.getElementById("btnBack").addEventListener("click", function() {
+        window.location.href = "/../clinic/public/?rota=spec";
+    });
 </script>

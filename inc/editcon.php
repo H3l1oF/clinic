@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    try {
         $db = new database();
         $stmt = $db->query("UPDATE consulta SET data = '$data', idMedico = $medico, idPaciente = $paciente, idEspecialidade = $idEspecialidade  WHERE idConsulta = $id");
+        $db = null;
+        $stmt = null;
         header("Location: /../clinic/public/?rota=consult");
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();

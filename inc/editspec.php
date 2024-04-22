@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $db = new database();
         $stmt = $db->query("UPDATE especialidade SET descricao = '$especialidade', preco = $preco WHERE idEspecialidade = $id");
+        $db = null;
+        $stmt = null;
         header("Location: /../clinic/public/?rota=spec");
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();

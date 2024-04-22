@@ -3,13 +3,13 @@
 require_once __DIR__ . "/../inc/database.php";
 require_once __DIR__ . "/../inc/header.php";
 
-    try {
-        $db = new database();
-        $gg = $db->query("SELECT COUNT(*) FROM consulta WHERE idPaciente = " . $_GET["idPaciente"]);
-    
-        $count = $gg->fetchColumn();
-        if ($count > 0) {
-            echo '
+try {
+    $db = new database();
+    $gg = $db->query("SELECT COUNT(*) FROM consulta WHERE idPaciente = " . $_GET["idPaciente"]);
+
+    $count = $gg->fetchColumn();
+    if ($count > 0) {
+        echo '
             <div classs="container p-5">
         <div class="row no-gutters">
             <div class="col-lg-2 col-md-12 mx-auto">
@@ -27,21 +27,24 @@ require_once __DIR__ . "/../inc/header.php";
             </div>
         </div>
                 ';
-    
-        } else {
+        $db = null;
+        $gg = null;
+    } else {
         $db = new database();
         $stmt = $db->query("DELETE FROM paciente WHERE idPaciente =" . $_GET["idPaciente"]);
+        $db = null;
+        $stmt = null;
         header("Location: /../clinic/public/?rota=pat");
-        exit; 
-        }
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        exit;
     }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
 
 ?>
 
 <script>
-document.getElementById("btnBack").addEventListener("click", function() {
-    window.location.href = "/../clinic/public/?rota=pat";
-});
+    document.getElementById("btnBack").addEventListener("click", function() {
+        window.location.href = "/../clinic/public/?rota=pat";
+    });
 </script>
